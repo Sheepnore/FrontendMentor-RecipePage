@@ -128,36 +128,57 @@
     border-radius: 50%;
     background-color: hsl(332, 51%, 32%);
     margin-right: 2rem;
-    margin-left: .5rem;
     flex: 1;
+
    }
 
-   .Instructions *{
-    margin-top:1rem;
-    list-style: none;
+   .Instructions h2{
+    margin-bottom: 1rem;
    }
 
-   .Instructions ol{
+  .Instructions ol{
+    counter-reset: item;
+    padding-left: 0;
+    list-style-type: none;
    }
 
-   .Instructions li::before{
-    content: counter(list-item) '.';
-    display: inline-block;
+   .Instructions ol li{
+    counter-increment: item;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
    }
+
+   .Instructions ol li::before{
+    content: counter(item) '.';
+    color: hsl(332, 51%, 32%);
+    width: 2rem;
+    height: 2rem;
+    padding-left: 0;
+   } 
+
+   .Instructions span{
+    color: hsl(30, 10%, 34%);
+    flex: 1; /* */
+   }
+
+
    .Nutrition{
     width: 100%;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 2px solid hsl(30, 18%, 87%);
+    border-top: 1px solid hsl(30, 18%, 87%);
     color: hsl(30, 10%, 34%);
    }
 
   table{
     width: 100%;
     margin-top: 1rem;
+    border-collapse: collapse;
   }
+
   .Nutrition tr{
-    border: 1px;
+    border-bottom: 1px solid hsl(30, 18%, 87%);
   }
   .Nutrition td{
     padding: .5rem;
@@ -211,12 +232,12 @@
     <div class="Instructions item">
       <h2>Instructions</h2>
       <ol>
-        <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</li>
-        <li>Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil
-        <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</li>
-        <li>Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</li>
-        <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</li>
-        <li>Enjoy: Serve hot, with additional salt and pepper if needed.</li>
+        <li><span><strong>Beat the eggs: </strong>In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. You can add a tablespoon of water or milk for a fluffier texture.</span></li>
+        <li><span><strong>Heat the pan: </strong>Place a non-stick frying pan over medium heat and add butter or oil</span>
+        <li><span><strong>Cook the omelette: </strong>Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs evenly coat the surface.</span></li>
+        <li><span><strong>Add fillings (optional): </strong>When the eggs begin to set at the edges but are still slightly runny in the middle, sprinkle your chosen fillings over one half of the omelette.</span></li>
+        <li><span><strong>Fold and serve: </strong>As the omelette continues to cook, carefully lift one edge and fold it over the fillings. Let it cook for another minute, then slide it onto a plate.</span></li>
+        <li><span><strong>Enjoy: </strong>Serve hot, with additional salt and pepper if needed.</span></li>
       </ol>
     </div>
   
